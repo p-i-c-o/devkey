@@ -3,7 +3,13 @@
 # Official DevKey Python Guide
 Visit the full guide at devkey.ch
 ### Projects:
-- [ ] [Password Generator](Projects/passwordgenerator.py)
+- [x] [Password Generator](Projects/passwordgenerator.py)
+- [ ] Web Scraper
+- [ ] Mad Libs
+- [ ] Suggest More!
+
+
+
 
 <!-----
 We sometimes struggle to pay the cost of keeping our website up. Help us educate the world. [Donate](https://www.paypal.com/donate/?hosted_button_id=SQ9YCEDJP3WXL)
