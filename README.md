@@ -3,4 +3,4 @@
 # Official DevKey Python Guide
 Visit the full guide at devkey.ch
 ### Projects:
-1. [Password Generator](https://github.com/p-i-c-o/devkeypython/blob/main/Projects/passwordgenerator.py)
+1. [Password Generator](Projects/passwordgenerator.py)
