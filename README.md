@@ -6,12 +6,10 @@ Visit the full guide at devkey.ch
 - [x] [Password Generator](Projects/passwordgenerator.py)
 - [ ] Web Scraper
 - [ ] Mad Libs
-- [ ] Suggest More!
 - [ ] Diary/Daily Journal
 - [ ] Contact Book
 - [ ] Day/Week Schedule
-
-
+- [ ] Suggest More!
 
 
 <!-----
