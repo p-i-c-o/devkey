@@ -1,7 +1,7 @@
 <img src="https://i.ibb.co/QnQBDf9/logo-square.png" width="250" align="right">
 
 # Official DevKey Python Guide
-Visit the full guide at [https://www.devkey.ch](devkey.ch)
+Visit the full guide at [www.devkey](https://www.devkey.ch)
 ### Projects:
 - [x] [Password Generator](Projects/passwordgenerator.py)
 - [ ] Web Scraper
