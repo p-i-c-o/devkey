@@ -7,6 +7,9 @@ Visit the full guide at devkey.ch
 - [ ] Web Scraper
 - [ ] Mad Libs
 - [ ] Suggest More!
+- [ ] Diary/Daily Journal
+- [ ] Contact Book
+- [ ] Day/Week Schedule
 
 
 
