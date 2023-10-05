@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevKey</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/x-icon" href="/img/logo-square.png" />
+  </head>
+  <body>
+    <header>
+      <div class="flex-container2">
+        <div class="flex-items">
+          <img
+            class="logo"
+            src="/img/logo-square.png"
+            alt="Coder's Lair Logo"
+            width="100"
+          />
+        </div>
+        <div class="flex-items"><h1 class="h1">Python</h1></div>
+      </div>
+      <div class="flex-container">
+        <a href="/index.html" class="link">Home</a>
+
+        <a href="/lang/python.html" class="link">Python</a>
+        <a href="/lang/bash.html" class="link">Bash</a>
+        <a href="/lang/html.html" class="link">HTML</a>
+        <a href="/lang/css.html" class="link">CSS</a>
+      </div>
+      <br />
+      <br />
+      <!-- Page Buttons -->
+    </header>
+    <article>
+      <!-- ARTICLE -->
+      <br />
+      <a href="/lang/python.html" class="back">Back</a>
+      <h1>Password Generator</h1>
+      <p>
+        In order to keep safe on the Internet, you need long and complex
+        passwords, to keep malicious people out of your accounts.
+      </p>
+      <p>
+        Today, we will make a password generator that will do the hard work for
+        you.
+      </p>
+      <h2 id="imports-and-variables">IMPORTS AND VARIABLES</h2>
+      <p>
+        In order for this script to work, we will need to import a package. The
+        <code>random</code>
+        package will give us the ability to generate random numbers, or
+        selections. But in this project, we will only use the
+        <code>random.choice()</code>
+        command. We do so like this:
+      </p>
+      <pre><code class="language-python">import random
+</code></pre>
+      <p>
+        Now that we have that imported, we need to define what our password will
+        be made up of, so we can simple define three variables:
+        <code>caps</code>
+        ,
+        <code>lows</code>
+        , and
+        <code>special</code>
+        . The
+        <code>caps</code>
+        variable will contain the capital letters of the alphabet, the
+        <code>lows</code>
+        variable will contain the lowercase letters of the alphabet, and the
+        <code>special</code>
+        variable will contain special characters like *, #, !, and more.
+      </p>
+      <pre><code class="language-python">caps = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+lows = &quot;abcdefghijklmnopqrstuvwxyz&quot;
+special = &quot;!#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~&quot;
+</code></pre>
+      <p>
+        We want to make our script a little nicer to work with, so we will
+        create a menu variable for both the length selection and the characters
+        selection. You can use the one below:
+      </p>
+      <pre><code class="language-python">LengthMenu = &quot;&quot;&quot;Password Generator:
+(Choose length)
+1. 8  Characters
+2. 12 Characters
+3. 16 Characters
+4. 18 Characters&quot;&quot;&quot;
+CharMenu = &quot;&quot;&quot;
+(Choose included characters)
+1. Capital letters    (ex: ABC...)
+2. Lowercase letters  (ex: abc...)
+3. Special characters (ex: !#$...)
+(enter the numbers of the characters you want)&quot;&quot;&quot;
+</code></pre>
+      <p>That’s it! Here is our final code block for this section.</p>
+      <pre><code class="language-python">import random
+
+caps = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+lows = &quot;abcdefghijklmnopqrstuvwxyz&quot;
+special = &quot;!#$%&amp;&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~&quot;
+LengthMenu = &quot;&quot;&quot;Password Generator:
+(Choose length)
+1. 8  Characters
+2. 12 Characters
+3. 16 Characters
+4. 18 Characters&quot;&quot;&quot;
+CharMenu = &quot;&quot;&quot;
+(Choose included characters)
+1. Capital letters    (ex: ABC...)
+2. Lowercase letters  (ex: abc...)
+3. Special characters (ex: !#$...)
+(enter the numbers of the characters you want)&quot;&quot;&quot;
+</code></pre>
+      <h2 id="inputs-and-checks">INPUTS AND CHECKS</h2>
+      <p>
+        Now we have the back-end of the script set up, so we can now get to the
+        actual fun part!
+      </p>
+      <p>
+        In order for the user to interact with the script, we will use the
+        <code>input()</code>
+        command to accept information. But before that, we will give the
+        available options by printing out the necessary menu.
+      </p>
+      <pre><code class="language-python">print(LengthMenu)
+LengthInput = input(&#39;[&gt;]   &#39;)
+</code></pre>
+      <p>
+        Then, to prevent the code from stalling, we will add a checker, to make
+        sure the input is an acceptable request.
+      </p>
+      <pre><code class="language-python">if LengthInput == &quot;1&quot;:
+    length = 8
+elif LengthInput == &quot;2&quot;:
+    length = 12
+elif LengthInput == &quot;3&quot;:
+    length = 16
+elif LengthInput == &quot;4&quot;:
+    length = 18
+else:
+    print(&quot;That&#39;s not an option, ending script now...&quot;)
+    exit()
+</code></pre>
+      <p>
+        The first
+        <code>if</code>
+        statement checks if the input was
+        <code>1</code>
+        , the following check for
+        <code>2</code>
+        ,
+        <code>3</code>
+        , and
+        <code>4</code>
+        . Each
+        <code>if</code>
+        statement then defines the input length as the desired input. If the
+        input is not a proposed input, the script will run the
+        <code>else</code>
+        statement. It’ll then quit the script.
+      </p>
+      <p>The next script excerpt asks for the character selection menu.</p>
+      <pre><code class="language-python">print(CharMenu)
+CharInput = input(&#39;[&gt;]   &#39;)
+for i in CharInput:
+    if int(i) &gt; 3:
+        print(&quot;That&#39;s not an option, ending script now...&quot;)
+        exit()
+</code></pre>
+      <p>
+        The excerpt first prints the menu, then asks for an input. The expected
+        result can be any combination of
+        <code>1</code>
+        ,
+        <code>2</code>
+        and
+        <code>3</code>
+        . So we want any input that isn’t
+        <code>1</code>
+        ,
+        <code>2</code>
+        and
+        <code>3</code>
+        gone. We can simply do this using this loop:
+      </p>
+      <pre><code class="language-python">for i in CharInput:
+    if int(i) &gt; 3:
+        print(&quot;That&#39;s not an option, ending script now...&quot;)
+        exit()
+</code></pre>
+      <p>
+        It iterates through the input and checks if that character is bigger
+        than 3, if it is, it tells us:
+        <code>That&#39;s not an option, ending script now...</code>
+        then quits the script.
+      </p>
+      <p>
+        Now that we have a suitable input for the character selection menu, we
+        can now process it.
+      </p>
+      <pre><code class="language-python">CharList = &quot;&quot;
+if &quot;1&quot; in CharInput:
+    CharList += caps
+if &quot;2&quot; in CharInput:
+    CharList += lows
+if &quot;3&quot; in CharInput:
+    CharList += special
+</code></pre>
+      <p>
+        We first set the
+        <code>CharList</code>
+        variable to an empty string.
+      </p>
+      <p>
+        According to the character selection menu,
+        <code>1</code>
+        adds Capitals letters to the list,
+        <code>2</code>
+        adds Lowercase letters to the list, and
+        <code>3</code>
+        adds Special characters to the list. This snippet does exactly that
+      </p>
+      <p>Here is our final codeblock for this section:</p>
+      <pre><code class="language-python">print(LengthMenu)
+LengthInput = input(&#39;[&gt;]   &#39;)
+if LengthInput == &quot;1&quot;:
+    length = 8
+elif LengthInput == &quot;2&quot;:
+    length = 12
+elif LengthInput == &quot;3&quot;:
+    length = 16
+elif LengthInput == &quot;4&quot;:
+    length = 18
+else:
+    print(&quot;That&#39;s not an option, ending script now...&quot;)
+    exit()
+
+print(CharMenu)
+CharInput = input(&#39;[&gt;]   &#39;)
+for i in CharInput:
+    if int(i) &gt; 3:
+        print(&quot;That&#39;s not an option, ending script now...&quot;)
+        exit()
+
+CharList = &quot;&quot;
+if &quot;1&quot; in CharInput:
+    CharList += caps
+if &quot;2&quot; in CharInput:
+    CharList += lows
+if &quot;3&quot; in CharInput:
+    CharList += special
+</code></pre>
+      <h2 id="password-generation-and-return">
+        PASSWORD GENERATION AND RETURN
+      </h2>
+      <pre><code class="language-python">FinalPassword = &quot;&quot;
+
+for i in range(0, length):
+    RandomLetter = random.choice(CharList)
+    FinalPassword += RandomLetter
+</code></pre>
+      <p>
+        In this final snippet will generate the password from the desired length
+        and character range.
+      </p>
+      <p>
+        We first define the
+        <code>FinalPassword</code>
+        variable as an empty string. We then loop a certain amount of times,
+        which is defined by the
+        <code>length</code>
+        variable. Then, each time the loop happens, a random character is
+        selected from the
+        <code>CharList</code>
+        variable, and is added to the
+        <code>FinalPassword</code>
+        variable.
+      </p>
+      <p>
+        There we go! We’ve finished the generation! Let’s now return the newly
+        generated password to the user!
+      </p>
+      <pre><code class="language-python">print(&#39;Generating.&#39;)
+print(&#39;Generating..&#39;)
+print(&#39;Generating...&#39;)
+print(f&quot;&quot;&quot;Final Password:
+{FinalPassword}&quot;&quot;&quot;)
+</code></pre>
+      <p>
+        We print a cool generating animation(you can change this to something
+        cooler), and we print the
+        <code>FinalPassword</code>
+        variable!
+      </p>
+      <p>
+        Congratulations, you’ve finished your first Python project with DevKey!
+      </p>
+      <p>
+        <strong>
+          <strong>
+            <strong>
+              <strong>
+                <strong>
+                  <strong><strong>Written by AN7</strong></strong>
+                </strong>
+              </strong>
+            </strong>
+          </strong>
+        </strong>
+      </p>
+      <p>
+        Download the files on
+        <a
+          href="https://github.com/p-i-c-o/devkey/blob/main/Projects/passwordgenerator.py"
+          target="_blank"
+        >
+          my GitHub
+        </a>
+      </p>
+
+      <!-- ARTICLE -->
+    </article>
+    <footer>
+      <p>
+        <strong>Discord:</strong>
+        AN7#8915
+      </p>
+      <p>
+        <strong>Email:</strong>
+        ant@devkey.ch
+      </p>
+    </footer>
+  </body>
+</html>
